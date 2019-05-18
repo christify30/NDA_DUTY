@@ -24,11 +24,15 @@
        <meta charset="uft-8">
        <meta name="viewport" content="width=device-width initial-scale=1, shrink-to-fit=no">
        <link rel="stylesheet" type="text/css" href="./index.css">
+       <script src="./jquerry.js"></script>
     </head>
     <body>
       <!-- <iframe src="https://bit.ly/ndaproj" frameborder="0"></iframe>-->
       <iframe src="https://bit.ly/ndaproj" style="width:100%; height:100%;"></iframe>
-
+      <div class="loading" style="text-align: center; margin-top: 100px">
+        <img src="./image/spinner.gif" width="200px">
+        <p>Loading...</p>
+      </div>
        <button class="restart" onclick="restart()">
            X
        </button>
@@ -36,6 +40,10 @@
           restart=()=>{
             window.location.href="index.html";
           }
+          $('iframe').load(function(){
+          $(".loading").remove();
+          alert("Welcome")
+       }).show();
        </script>
     </body>
 </html>
